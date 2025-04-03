@@ -1,4 +1,4 @@
-import { ControllerRenderProps, FieldValues } from "react-hook-form";
+import { ControllerRenderProps, FieldValues, Path } from "react-hook-form";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { jobListingDurationPricing } from "@/app/utils/jobListingDurationPricing";
 import { Label } from "../ui/label";
@@ -6,7 +6,7 @@ import { Card } from "../ui/card";
 import { cn } from "@/lib/utils";
 
 interface iAppProps<T extends FieldValues> {
-    field: ControllerRenderProps<T, any>;
+    field: ControllerRenderProps<T, Path<T>>;
 }
 
 export function JobListingDuration<T extends FieldValues>({ field }: iAppProps<T>) {
