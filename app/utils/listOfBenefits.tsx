@@ -13,7 +13,6 @@ import {
   ShieldPlus,
   HeartPulse,
   Stethoscope,
-  Dumbbell,
   HelpingHand,
   GraduationCap,
   Sun,

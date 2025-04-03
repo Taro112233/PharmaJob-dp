@@ -84,7 +84,7 @@ export function MainPagination({ currentPage, totalPages }: iAppProps) {
 
                 {generatePaginationItems().map((page, index) => (
                     page === null ? (
-                        <PaginationItem>
+                        <PaginationItem key={`ellipsis-${index}`}>
                             <PaginationEllipsis />
                         </PaginationItem>
                     ) : (

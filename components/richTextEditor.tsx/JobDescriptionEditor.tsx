@@ -4,9 +4,13 @@ import { MenuBar } from './MenuBar';
 import TextAlign from '@tiptap/extension-text-align';
 import Typography from '@tiptap/extension-typography';
 import { ControllerRenderProps } from 'react-hook-form';
+import { jobSchema } from '@/app/utils/zodSchemas';
+import { z } from 'zod';
+
+type FormValues = z.infer<typeof jobSchema>;
 
 interface iAppProps {
-    field: ControllerRenderProps;
+    field: ControllerRenderProps<FormValues, "jobDescription">;
 }
 
 export function JobDescriptionEditor({ field }: iAppProps) {

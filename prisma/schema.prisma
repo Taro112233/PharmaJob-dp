@@ -134,7 +134,7 @@ model JobPost {
   benefits        String[]
   listingDuration Int
 
-  status JobPostStatus @default(DRAFT)
+  status JobPostStatus @default(ACTIVE)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

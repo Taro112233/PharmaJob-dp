@@ -129,7 +129,7 @@ export default async function EditJobPage({ params }: { params: Params }) {
                             {testimonials.map((testimonial, index) => (
                                 <blockquote key={index} className="border-l-2 border-primary pl-4">
                                     <p className="text-sm text-muted-foreground italic">
-                                        "{testimonial.quote}"
+                                        &ldquo;{testimonial.quote}&rdquo;
                                     </p>
                                     <footer className="mt-2 text-sm font-medium">
                                         - {testimonial.author}, {testimonial.company}

@@ -1,8 +1,6 @@
 import { prisma } from "@/app/utils/db";
 import { requireUser } from "@/app/utils/requireUser";
 import { EmptyState } from "@/components/general/EmptyState";
-import { JobCard } from "@/components/general/JobCard";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 async function getFavorites(userId: string) {
     const data = await prisma.savedJobPost.findMany({
@@ -55,14 +53,7 @@ export default async function FavoritesPage() {
 
     return (
         <div className="grid grid-cols-1 mt-5 gap-4">
-            <span className="text-2xl font-bold">รายการโปรด</span>
-            {data.map((favorite) => (
-
-                <JobCard
-                    key={favorite.JobPost.id}
-                    job={favorite.JobPost}
-                />
-            ))}
+            <span className="text-2xl font-bold">โปรไฟล์ของฉัน</span>
         </div>
     )
 }

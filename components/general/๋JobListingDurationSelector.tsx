@@ -18,7 +18,7 @@ export function JobListingDuration({ field }: iAppProps) {
             <div className="flex flex-col gap-4">
                 {jobListingDurationPricing.map((duration) => (
                     <div key={duration.days} className="relative">
-                        <RadioGroupItem 
+                        <RadioGroupItem
                             value={duration.days.toString()}
                             id={duration.days.toString()}
                             className="sr-only"

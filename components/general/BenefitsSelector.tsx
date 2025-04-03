@@ -1,9 +1,13 @@
 import { benefits } from "@/app/utils/listOfBenefits";
 import { Badge } from "../ui/badge";
 import { ControllerRenderProps } from "react-hook-form";
+import { jobSchema } from "@/app/utils/zodSchemas";
+import { z } from "zod";
+
+type FormValues = z.infer<typeof jobSchema>;
 
 interface iAppProps {
-    field: ControllerRenderProps;
+    field: ControllerRenderProps<FormValues, "benefits">;
 }
 
 export function BenefitsSelector({ field }: iAppProps) {

@@ -4,10 +4,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { useForm } from "react-hook-form";
 import { jobSchema } from "@/app/utils/zodSchemas";
-import { set, z } from "zod";
+import { z } from "zod";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../ui/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { provinceList } from "@/app/utils/provinceList";
 import { SalaryRangeSelector } from "../general/SalaryRangeSelector";
 import { TimeRangeSelector } from "../general/TimeRangeSelector";
@@ -271,7 +271,7 @@ export function CreateJobForm({
                                 <FormItem>
                                     <FormLabel>รายละเอียดงาน<FormMessage /></FormLabel>
                                     <FormControl>
-                                        <JobDescriptionEditor field={field as any} />
+                                        <JobDescriptionEditor field={field} />
                                     </FormControl>
                                 </FormItem>
                             )}
@@ -284,7 +284,7 @@ export function CreateJobForm({
                                 <FormItem>
                                     <FormLabel>Tag สวัสดิการ</FormLabel>
                                     <FormControl>
-                                        <BenefitsSelector field={field as any} />
+                                        <BenefitsSelector field={field} />
                                     </FormControl>
                                 </FormItem>
                             )}
@@ -503,7 +503,7 @@ export function CreateJobForm({
 
                                 <FormItem>
                                     <FormControl>
-                                        <JobListingDuration field={field as any} />
+                                        <JobListingDuration field={field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

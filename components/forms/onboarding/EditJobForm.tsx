@@ -253,7 +253,6 @@ export function EditJobForm({ jobPost }: iAppProps) {
                                         control={form.control}
                                         minSalary={0}
                                         maxSalary={150000}
-                                        currency="USD"
                                         step={1000}
                                     />
                                 </FormControl>
@@ -279,7 +278,7 @@ export function EditJobForm({ jobPost }: iAppProps) {
                                 <FormItem>
                                     <FormLabel>รายละเอียดงาน<FormMessage /></FormLabel>
                                     <FormControl>
-                                        <JobDescriptionEditor field={field as any} />
+                                        <JobDescriptionEditor field={field} />
                                     </FormControl>
                                 </FormItem>
                             )}
@@ -292,7 +291,7 @@ export function EditJobForm({ jobPost }: iAppProps) {
                                 <FormItem>
                                     <FormLabel>Tag สวัสดิการ</FormLabel>
                                     <FormControl>
-                                        <BenefitsSelector field={field as any} />
+                                        <BenefitsSelector field={field} />
                                     </FormControl>
                                 </FormItem>
                             )}
