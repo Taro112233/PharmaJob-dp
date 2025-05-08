@@ -20,10 +20,12 @@ export default async function Home({ searchParams }: searchParams) {
 
     const filterKey = `page=${currentPage};types=${jobTypes.join(",")};province=${province}`;
     return (
-        <div className="grid grid-cols-3 gap-8">
-            <JobFilter />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            <div className="md:col-span-1">
+                <JobFilter />
+            </div>
 
-            <div className="col-span-2 flex flex-col gap-6">
+            <div className="md:col-span-2 flex flex-col gap-6">
                 <Suspense fallback={<JobListingLoading />} key={filterKey}>
                     <JobListings province={province} currentPage={currentPage} jobTypes={jobTypes} />
                 </Suspense>
