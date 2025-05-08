@@ -30,7 +30,8 @@ export function JobCard({ job }: iAppProps) {
             <Card className="hover:shadow-lg transition-all duration-300 hover:border-primary">
                 <CardHeader>
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className="flex flex-row gap-4 items-center w-full justify-between">
+                        {/* Mobile view layout */}
+                        <div className="md:hidden flex flex-row gap-4 items-center w-full justify-between">
                             <Image
                                 src={job.Company.logo}
                                 alt={job.Company.name}
@@ -39,8 +40,8 @@ export function JobCard({ job }: iAppProps) {
                                 className="size-12 rounded-lg"
                             />
 
-                            {/* Mobile location and time info - shown only on mobile */}
-                            <div className="flex flex-col md:hidden items-end">
+                            {/* Mobile location and time info */}
+                            <div className="flex flex-col items-end">
                                 <div className="flex items-center gap-2">
                                     <MapPin className="size-4" />
                                     <h1>{job.jobProvince}</h1>
@@ -49,6 +50,17 @@ export function JobCard({ job }: iAppProps) {
                                     {formatRelativeTime(job.createdAt)}
                                 </p>
                             </div>
+                        </div>
+
+                        {/* Desktop/tablet view logo */}
+                        <div className="hidden md:block">
+                            <Image
+                                src={job.Company.logo}
+                                alt={job.Company.name}
+                                width={48}
+                                height={48}
+                                className="size-12 rounded-lg"
+                            />
                         </div>
 
                         <div>
@@ -79,7 +91,7 @@ export function JobCard({ job }: iAppProps) {
                             </div>
                         </div>
 
-                        {/* Desktop location and time info - hidden on mobile */}
+                        {/* Desktop location and time info */}
                         <div className="hidden md:block md:ml-auto text-right">
                             <div className="flex items-center gap-2 justify-end">
                                 <MapPin className="size-4" />
